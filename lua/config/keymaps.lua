@@ -5,4 +5,4 @@
 local map = vim.keymap.set
 
 map("n", "<leader>q", vim.cmd.quit, { desc = "Quit file", silent = true })
-map("n", "<leader>Q", vim.cmd.only, { desc = " Quit all", silent = true })
+map("n", "<leader>Q", vim.cmd.only, { desc = "Close all but this window", silent = true })
