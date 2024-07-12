@@ -19,6 +19,7 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
+    -- ==== Extras =====
     -- langs
     { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.lang.python" },
@@ -34,6 +35,12 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
     -- formatters/linters
     { import = "lazyvim.plugins.extras.formatting.prettier" },
+    -- movement
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.editor.leap" },
+    -- misc
+    { import = "lazyvim.plugins.extras.editor.overseer" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
     { import = "plugins" },
   },
   defaults = {
