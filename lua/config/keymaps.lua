@@ -6,3 +6,8 @@ local map = vim.keymap.set
 
 map("n", "<leader>q", vim.cmd.quit, { desc = "Quit file", silent = true })
 map("n", "<leader>Q", vim.cmd.only, { desc = "Close all but this window", silent = true })
+-- Avoid bad habits
+map("n", "<Left>", "<cmd>echo 'no arrow keys'<cr><esc>")
+map("n", "<Right>", "<cmd>echo 'no arrow keys'<cr><esc>")
+map("n", "<Down>", "<cmd>echo 'no arrow keys'<cr><esc>")
+map("n", "<Up>", "<cmd>echo 'no arrow keys'<cr><esc>")
