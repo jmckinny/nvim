@@ -40,6 +40,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.leap" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    -- snippets
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- misc
     { import = "lazyvim.plugins.extras.editor.overseer" },
     { import = "lazyvim.plugins.extras.editor.refactoring" },
