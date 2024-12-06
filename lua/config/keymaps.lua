@@ -21,3 +21,5 @@ map("n", "N", "Nzz")
 -- Move selected lines with shift+j or shift+k
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Duplicate a line and comment out the first line
+vim.keymap.set("n", "yc", "<cmd>norm yygcc<cr>p", { noremap = true, desc = "Duplicate line and comment original" })
