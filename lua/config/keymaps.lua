@@ -18,3 +18,6 @@ map("n", "<C-u>", "<C-u>zz")
 -- Center search
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
+-- Move selected lines with shift+j or shift+k
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
