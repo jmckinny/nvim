@@ -1,0 +1,13 @@
+snippet iferr If err != nil
+  if err != nil {
+    ${1}
+  }
+snippet reterr Return err
+  if err != nil {
+    return err
+  }
+  ${1}
+snippet logferr Log fatal err
+  if err != nil {
+    log.Fatalln(${1}, err)
+  }
