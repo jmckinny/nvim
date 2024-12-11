@@ -23,3 +23,10 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 -- Duplicate a line and comment out the first line
 map("n", "yc", "<cmd>norm yygcc<cr>p", { noremap = true, desc = "Duplicate line and comment original" })
+-- Zen mode
+map("n", "<leader>z", function()
+  Snacks.zen()
+end, { desc = "Toggle Zen Mode" })
+map("n", "<leader>Z", function()
+  Snacks.zen.zoom()
+end, { desc = "Toggle Zen Mode" })
