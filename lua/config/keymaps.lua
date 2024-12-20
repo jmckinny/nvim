@@ -57,7 +57,7 @@ map("n", "<leader>sil", function()
 
   local line = vim.api.nvim_get_current_line()
   local encoded_line = urlencode(line)
-  local url = "https:/duckduckgo/search?q=" .. encoded_line
+  local url = "https:/duckduckgo/?q=" .. encoded_line
   local output = vim.system({ "open", url }):wait()
   if output["stdout"] ~= nil then
     vim.notify(output["stdout"])
