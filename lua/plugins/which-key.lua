@@ -4,4 +4,6 @@ return {
   opts = {
     preset = "classic",
   },
+  require("which-key").add({ "<leader>t", group = "tags" }),
+  require("which-key").add({ "<leader>si", group = "internet" }),
 }

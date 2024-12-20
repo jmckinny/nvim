@@ -30,3 +30,38 @@ end, { desc = "Toggle Zen Mode" })
 map("n", "<leader>Z", function()
   Snacks.zen.zoom()
 end, { desc = "Toggle Zen Mode" })
+-- ctags
+map("n", "<leader>tb", "<cmd>!ctags .<cr><esc>", { noremap = true, desc = "Build ctags" })
+map("n", "<leader>tl", vim.cmd.tags, { noremap = true, desc = "List ctags" })
+-- Search Internet
+map(
+  "n",
+  "<leader>siw",
+  "<cmd>!open https://duckduckgo.com/?q=<C-R><C-W><CR>",
+  { noremap = true, desc = "Search internet for word" }
+)
+map("n", "<leader>sil", function()
+  local char_to_hex = function(c)
+    return string.format("%%%02X", string.byte(c))
+  end
+
+  local function urlencode(url)
+    if url == nil then
+      return
+    end
+    url = url:gsub("\n", "\r\n")
+    url = url:gsub("([^%w ])", char_to_hex)
+    url = url:gsub(" ", "+")
+    return url
+  end
+
+  local line = vim.api.nvim_get_current_line()
+  local encoded_line = urlencode(line)
+  local url = "https:/duckduckgo/search?q=" .. encoded_line
+  local output = vim.system({ "open", url }):wait()
+  if output["stdout"] ~= nil then
+    vim.notify(output["stdout"])
+  else
+    vim.notify(output["stderr"], vim.log.levels.ERROR)
+  end
+end, { noremap = true, desc = "Search internet for line" })
