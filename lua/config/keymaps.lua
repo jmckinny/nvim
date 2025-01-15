@@ -34,13 +34,7 @@ end, { desc = "Toggle Zoom Mode" })
 map("n", "<leader>tb", "<cmd>!ctags .<cr><esc>", { noremap = true, desc = "Build ctags" })
 map("n", "<leader>tl", vim.cmd.tags, { noremap = true, desc = "List ctags" })
 -- Search Internet
-map(
-  "n",
-  "<leader>siw",
-  "<cmd>!open https://duckduckgo.com/?q=<C-R><C-W><CR>",
-  { noremap = true, desc = "Search internet for word" }
-)
-map("n", "<leader>sil", function()
+local function search_internet_for(text)
   local char_to_hex = function(c)
     return string.format("%%%02X", string.byte(c))
   end
@@ -55,13 +49,22 @@ map("n", "<leader>sil", function()
     return url
   end
 
-  local line = vim.api.nvim_get_current_line()
-  local encoded_line = urlencode(line)
+  local encoded_line = urlencode(text)
   local url = "https://duckduckgo.com/?q=" .. encoded_line
-  local output = vim.system({ "open", url }):wait()
+  local output = vim.system({ "xdg-open", url }):wait()
   if output["stdout"] ~= nil then
     vim.notify(output["stdout"])
   else
     vim.notify(output["stderr"], vim.log.levels.ERROR)
   end
+end
+
+map("n", "<leader>siw", function()
+  local word = vim.fn.expand("<cword>")
+  search_internet_for(word)
+end, { noremap = true, desc = "Search internet for word" })
+
+map("n", "<leader>sil", function()
+  local line = vim.api.nvim_get_current_line()
+  search_internet_for(line)
 end, { noremap = true, desc = "Search internet for line" })
