@@ -29,7 +29,7 @@ map("n", "<leader>z", function()
 end, { desc = "Toggle Zen Mode" })
 map("n", "<leader>Z", function()
   Snacks.zen.zoom()
-end, { desc = "Toggle Zen Mode" })
+end, { desc = "Toggle Zoom Mode" })
 -- ctags
 map("n", "<leader>tb", "<cmd>!ctags .<cr><esc>", { noremap = true, desc = "Build ctags" })
 map("n", "<leader>tl", vim.cmd.tags, { noremap = true, desc = "List ctags" })
