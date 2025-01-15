@@ -31,8 +31,8 @@ map("n", "<leader>Z", function()
   Snacks.zen.zoom()
 end, { desc = "Toggle Zoom Mode" })
 -- ctags
-map("n", "<leader>tb", "<cmd>!ctags .<cr><esc>", { noremap = true, desc = "Build ctags" })
-map("n", "<leader>tl", vim.cmd.tags, { noremap = true, desc = "List ctags" })
+map("n", "<leader>ctb", "<cmd>!ctags .<cr><esc>", { noremap = true, desc = "Build ctags" })
+map("n", "<leader>ctl", vim.cmd.tags, { noremap = true, desc = "List ctags" })
 -- Search Internet
 local function search_internet_for(text)
   local char_to_hex = function(c)
