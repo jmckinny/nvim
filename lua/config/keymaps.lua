@@ -68,3 +68,5 @@ map("n", "<leader>sil", function()
   local line = vim.api.nvim_get_current_line()
   search_internet_for(line)
 end, { noremap = true, desc = "Search internet for line" })
+
+map("n", "<leader>t", "<cmd>!task<cr><esc>", { noremap = true, desc = "Taskwarrior" })
