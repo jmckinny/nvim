@@ -1,5 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.editor.aerial" },
   {
     "stevearc/aerial.nvim",
     keys = {
