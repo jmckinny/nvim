@@ -18,9 +18,6 @@ map("n", "<C-u>", "<C-u>zz")
 -- Center search
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
--- Move selected lines with shift+j or shift+k
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
 -- Duplicate a line and comment out the first line
 map("n", "yc", "<cmd>norm yygcc<cr>p", { noremap = true, desc = "Duplicate line and comment original" })
 -- Zen mode
