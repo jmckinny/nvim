@@ -29,6 +29,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.svelte" },
     { import = "lazyvim.plugins.extras.lang.sql" },
     { import = "lazyvim.plugins.extras.lang.vue" },
+    { import = "lazyvim.plugins.extras.lang.zig" },
     -- misc formats
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.json" },
